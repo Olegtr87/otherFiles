@@ -71,7 +71,6 @@ CREATE TABLE "operation" (
 CREATE TABLE "currency" (
 	"id" serial NOT NULL,
 	"name" character varying NOT NULL UNIQUE,
-	"short_name" character varying(5) NOT NULL UNIQUE,
 	CONSTRAINT currency_pk PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE

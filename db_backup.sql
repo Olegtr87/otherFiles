@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.2
 -- Dumped by pg_dump version 9.5.2
 
--- Started on 2016-04-17 22:19:23
+-- Started on 2016-04-23 02:03:47
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -24,7 +24,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2192 (class 0 OID 0)
+-- TOC entry 2191 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
 --
@@ -61,7 +61,7 @@ CREATE SEQUENCE balance_id_seq
 
 
 --
--- TOC entry 2193 (class 0 OID 0)
+-- TOC entry 2192 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: balance_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -94,7 +94,7 @@ CREATE SEQUENCE currency_id_seq
 
 
 --
--- TOC entry 2194 (class 0 OID 0)
+-- TOC entry 2193 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: currency_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -130,7 +130,7 @@ CREATE SEQUENCE exchange_rate_id_seq
 
 
 --
--- TOC entry 2195 (class 0 OID 0)
+-- TOC entry 2194 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: exchange_rate_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -165,7 +165,7 @@ CREATE SEQUENCE operation_id_seq
 
 
 --
--- TOC entry 2196 (class 0 OID 0)
+-- TOC entry 2195 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: operation_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -202,7 +202,7 @@ CREATE SEQUENCE transaction_id_seq
 
 
 --
--- TOC entry 2197 (class 0 OID 0)
+-- TOC entry 2196 (class 0 OID 0)
 -- Dependencies: 185
 -- Name: transaction_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -237,7 +237,7 @@ CREATE SEQUENCE user_credentials_id_seq
 
 
 --
--- TOC entry 2198 (class 0 OID 0)
+-- TOC entry 2197 (class 0 OID 0)
 -- Dependencies: 183
 -- Name: user_credentials_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -276,7 +276,7 @@ CREATE SEQUENCE user_profile_id_seq
 
 
 --
--- TOC entry 2199 (class 0 OID 0)
+-- TOC entry 2198 (class 0 OID 0)
 -- Dependencies: 181
 -- Name: user_profile_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -285,15 +285,7 @@ ALTER SEQUENCE user_profile_id_seq OWNED BY user_profile.id;
 
 
 --
--- TOC entry 2025 (class 2604 OID 24772)
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY balance ALTER COLUMN id SET DEFAULT nextval('balance_id_seq'::regclass);
-
-
---
--- TOC entry 2026 (class 2604 OID 24780)
+-- TOC entry 2025 (class 2604 OID 24780)
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -333,7 +325,7 @@ ALTER TABLE ONLY user_credentials ALTER COLUMN id SET DEFAULT nextval('user_cred
 
 
 --
--- TOC entry 2183 (class 0 OID 24769)
+-- TOC entry 2182 (class 0 OID 24769)
 -- Dependencies: 192
 -- Data for Name: balance; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -341,7 +333,7 @@ ALTER TABLE ONLY user_credentials ALTER COLUMN id SET DEFAULT nextval('user_cred
 
 
 --
--- TOC entry 2200 (class 0 OID 0)
+-- TOC entry 2199 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: balance_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -350,7 +342,7 @@ SELECT pg_catalog.setval('balance_id_seq', 1, false);
 
 
 --
--- TOC entry 2185 (class 0 OID 24777)
+-- TOC entry 2184 (class 0 OID 24777)
 -- Dependencies: 194
 -- Data for Name: currency; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -358,7 +350,7 @@ SELECT pg_catalog.setval('balance_id_seq', 1, false);
 
 
 --
--- TOC entry 2201 (class 0 OID 0)
+-- TOC entry 2200 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: currency_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -367,7 +359,7 @@ SELECT pg_catalog.setval('currency_id_seq', 1, false);
 
 
 --
--- TOC entry 2179 (class 0 OID 24746)
+-- TOC entry 2178 (class 0 OID 24746)
 -- Dependencies: 188
 -- Data for Name: exchange_rate; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -375,7 +367,7 @@ SELECT pg_catalog.setval('currency_id_seq', 1, false);
 
 
 --
--- TOC entry 2202 (class 0 OID 0)
+-- TOC entry 2201 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: exchange_rate_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -384,7 +376,7 @@ SELECT pg_catalog.setval('exchange_rate_id_seq', 1, false);
 
 
 --
--- TOC entry 2181 (class 0 OID 24756)
+-- TOC entry 2180 (class 0 OID 24756)
 -- Dependencies: 190
 -- Data for Name: operation; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -392,7 +384,7 @@ SELECT pg_catalog.setval('exchange_rate_id_seq', 1, false);
 
 
 --
--- TOC entry 2203 (class 0 OID 0)
+-- TOC entry 2202 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: operation_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -401,7 +393,7 @@ SELECT pg_catalog.setval('operation_id_seq', 1, false);
 
 
 --
--- TOC entry 2177 (class 0 OID 24738)
+-- TOC entry 2176 (class 0 OID 24738)
 -- Dependencies: 186
 -- Data for Name: transaction; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -409,7 +401,7 @@ SELECT pg_catalog.setval('operation_id_seq', 1, false);
 
 
 --
--- TOC entry 2204 (class 0 OID 0)
+-- TOC entry 2203 (class 0 OID 0)
 -- Dependencies: 185
 -- Name: transaction_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -418,32 +410,34 @@ SELECT pg_catalog.setval('transaction_id_seq', 1, false);
 
 
 --
--- TOC entry 2175 (class 0 OID 24728)
+-- TOC entry 2174 (class 0 OID 24728)
 -- Dependencies: 184
 -- Data for Name: user_credentials; Type: TABLE DATA; Schema: public; Owner: -
 --
 
+INSERT INTO user_credentials (id, login, password, role) VALUES (1, 'login', 'password', 'admin');
 
 
 --
--- TOC entry 2205 (class 0 OID 0)
+-- TOC entry 2204 (class 0 OID 0)
 -- Dependencies: 183
 -- Name: user_credentials_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('user_credentials_id_seq', 1, false);
+SELECT pg_catalog.setval('user_credentials_id_seq', 1, true);
 
 
 --
--- TOC entry 2173 (class 0 OID 24715)
+-- TOC entry 2172 (class 0 OID 24715)
 -- Dependencies: 182
 -- Data for Name: user_profile; Type: TABLE DATA; Schema: public; Owner: -
 --
 
+INSERT INTO user_profile (id, last_name, first_name, patronymic, number_passport, date_issue, issued, created) VALUES (1, 'lname', 'fname', 'otch', 'KH1213', '2012-12-12 00:00:00', 'sdf', '2012-12-12 00:00:00');
 
 
 --
--- TOC entry 2206 (class 0 OID 0)
+-- TOC entry 2205 (class 0 OID 0)
 -- Dependencies: 181
 -- Name: user_profile_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -452,7 +446,7 @@ SELECT pg_catalog.setval('user_profile_id_seq', 1, false);
 
 
 --
--- TOC entry 2046 (class 2606 OID 24774)
+-- TOC entry 2045 (class 2606 OID 24774)
 -- Name: balance_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -461,7 +455,7 @@ ALTER TABLE ONLY balance
 
 
 --
--- TOC entry 2048 (class 2606 OID 24787)
+-- TOC entry 2047 (class 2606 OID 24787)
 -- Name: currency_name_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -470,7 +464,7 @@ ALTER TABLE ONLY currency
 
 
 --
--- TOC entry 2050 (class 2606 OID 24785)
+-- TOC entry 2049 (class 2606 OID 24785)
 -- Name: currency_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -479,7 +473,7 @@ ALTER TABLE ONLY currency
 
 
 --
--- TOC entry 2038 (class 2606 OID 24753)
+-- TOC entry 2037 (class 2606 OID 24753)
 -- Name: exchange_rate_date_course_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -488,7 +482,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2040 (class 2606 OID 24751)
+-- TOC entry 2039 (class 2606 OID 24751)
 -- Name: exchange_rate_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -497,7 +491,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2042 (class 2606 OID 24766)
+-- TOC entry 2041 (class 2606 OID 24766)
 -- Name: operation_name_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -506,7 +500,7 @@ ALTER TABLE ONLY operation
 
 
 --
--- TOC entry 2044 (class 2606 OID 24764)
+-- TOC entry 2043 (class 2606 OID 24764)
 -- Name: operation_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -515,7 +509,7 @@ ALTER TABLE ONLY operation
 
 
 --
--- TOC entry 2036 (class 2606 OID 24743)
+-- TOC entry 2035 (class 2606 OID 24743)
 -- Name: transaction_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -524,7 +518,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2032 (class 2606 OID 24735)
+-- TOC entry 2031 (class 2606 OID 24735)
 -- Name: user_credentials_login_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -533,7 +527,7 @@ ALTER TABLE ONLY user_credentials
 
 
 --
--- TOC entry 2034 (class 2606 OID 24733)
+-- TOC entry 2033 (class 2606 OID 24733)
 -- Name: user_credentials_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -542,7 +536,7 @@ ALTER TABLE ONLY user_credentials
 
 
 --
--- TOC entry 2028 (class 2606 OID 24725)
+-- TOC entry 2027 (class 2606 OID 24725)
 -- Name: user_profile_number_passport_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -551,7 +545,7 @@ ALTER TABLE ONLY user_profile
 
 
 --
--- TOC entry 2030 (class 2606 OID 24723)
+-- TOC entry 2029 (class 2606 OID 24723)
 -- Name: user_profile_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -560,16 +554,16 @@ ALTER TABLE ONLY user_profile
 
 
 --
--- TOC entry 2057 (class 2606 OID 24818)
--- Name: currency_fk0; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 2056 (class 2606 OID 24944)
+-- Name: balance_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY currency
-    ADD CONSTRAINT currency_fk0 FOREIGN KEY (id) REFERENCES balance(id);
+ALTER TABLE ONLY balance
+    ADD CONSTRAINT balance_id_fkey FOREIGN KEY (id) REFERENCES currency(id);
 
 
 --
--- TOC entry 2055 (class 2606 OID 24808)
+-- TOC entry 2054 (class 2606 OID 24808)
 -- Name: exchange_rate_fk0; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -578,7 +572,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2056 (class 2606 OID 24813)
+-- TOC entry 2055 (class 2606 OID 24813)
 -- Name: exchange_rate_fk1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -587,7 +581,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2052 (class 2606 OID 24798)
+-- TOC entry 2051 (class 2606 OID 24798)
 -- Name: transaction_fk1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -596,7 +590,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2053 (class 2606 OID 24803)
+-- TOC entry 2052 (class 2606 OID 24803)
 -- Name: transaction_fk2; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -605,7 +599,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2054 (class 2606 OID 24826)
+-- TOC entry 2053 (class 2606 OID 24826)
 -- Name: transaction_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -614,7 +608,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2051 (class 2606 OID 24788)
+-- TOC entry 2050 (class 2606 OID 24788)
 -- Name: user_profile_fk0; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -622,7 +616,7 @@ ALTER TABLE ONLY user_profile
     ADD CONSTRAINT user_profile_fk0 FOREIGN KEY (id) REFERENCES user_credentials(id);
 
 
--- Completed on 2016-04-17 22:19:24
+-- Completed on 2016-04-23 02:03:47
 
 --
 -- PostgreSQL database dump complete

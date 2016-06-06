@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.2
 -- Dumped by pg_dump version 9.5.2
 
--- Started on 2016-05-26 23:50:18
+-- Started on 2016-06-04 00:35:26
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -32,7 +32,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2296 (class 0 OID 0)
+-- TOC entry 2294 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
 --
@@ -69,7 +69,7 @@ CREATE SEQUENCE balance_id_seq
 
 
 --
--- TOC entry 2297 (class 0 OID 0)
+-- TOC entry 2295 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: balance_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -102,7 +102,7 @@ CREATE SEQUENCE currency_id_seq
 
 
 --
--- TOC entry 2298 (class 0 OID 0)
+-- TOC entry 2296 (class 0 OID 0)
 -- Dependencies: 194
 -- Name: currency_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -138,7 +138,7 @@ CREATE SEQUENCE exchange_rate_id_seq
 
 
 --
--- TOC entry 2299 (class 0 OID 0)
+-- TOC entry 2297 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: exchange_rate_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -173,7 +173,7 @@ CREATE SEQUENCE operation_id_seq
 
 
 --
--- TOC entry 2300 (class 0 OID 0)
+-- TOC entry 2298 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: operation_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -210,7 +210,7 @@ CREATE SEQUENCE transaction_id_seq
 
 
 --
--- TOC entry 2301 (class 0 OID 0)
+-- TOC entry 2299 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: transaction_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -245,7 +245,7 @@ CREATE SEQUENCE user_credentials_id_seq
 
 
 --
--- TOC entry 2302 (class 0 OID 0)
+-- TOC entry 2300 (class 0 OID 0)
 -- Dependencies: 184
 -- Name: user_credentials_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -284,7 +284,7 @@ CREATE SEQUENCE user_profile_id_seq
 
 
 --
--- TOC entry 2303 (class 0 OID 0)
+-- TOC entry 2301 (class 0 OID 0)
 -- Dependencies: 182
 -- Name: user_profile_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -319,7 +319,7 @@ CREATE SEQUENCE balance_id_seq
 
 
 --
--- TOC entry 2304 (class 0 OID 0)
+-- TOC entry 2302 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: balance_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: -
 --
@@ -352,7 +352,7 @@ CREATE SEQUENCE currency_id_seq
 
 
 --
--- TOC entry 2305 (class 0 OID 0)
+-- TOC entry 2303 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: currency_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: -
 --
@@ -388,7 +388,7 @@ CREATE SEQUENCE exchange_rate_id_seq
 
 
 --
--- TOC entry 2306 (class 0 OID 0)
+-- TOC entry 2304 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: exchange_rate_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: -
 --
@@ -423,7 +423,7 @@ CREATE SEQUENCE operation_id_seq
 
 
 --
--- TOC entry 2307 (class 0 OID 0)
+-- TOC entry 2305 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: operation_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: -
 --
@@ -460,7 +460,7 @@ CREATE SEQUENCE transaction_id_seq
 
 
 --
--- TOC entry 2308 (class 0 OID 0)
+-- TOC entry 2306 (class 0 OID 0)
 -- Dependencies: 205
 -- Name: transaction_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: -
 --
@@ -495,7 +495,7 @@ CREATE SEQUENCE user_credentials_id_seq
 
 
 --
--- TOC entry 2309 (class 0 OID 0)
+-- TOC entry 2307 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: user_credentials_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: -
 --
@@ -533,7 +533,7 @@ CREATE SEQUENCE user_profile_id_seq
 
 
 --
--- TOC entry 2310 (class 0 OID 0)
+-- TOC entry 2308 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: user_profile_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: -
 --
@@ -660,7 +660,7 @@ ALTER TABLE ONLY user_profile ALTER COLUMN id SET DEFAULT nextval('user_profile_
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 2273 (class 0 OID 25159)
+-- TOC entry 2271 (class 0 OID 25159)
 -- Dependencies: 193
 -- Data for Name: balance; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -673,7 +673,7 @@ INSERT INTO balance (id, sum) VALUES (5, 7000);
 
 
 --
--- TOC entry 2311 (class 0 OID 0)
+-- TOC entry 2309 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: balance_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -682,7 +682,7 @@ SELECT pg_catalog.setval('balance_id_seq', 5, true);
 
 
 --
--- TOC entry 2275 (class 0 OID 25167)
+-- TOC entry 2273 (class 0 OID 25167)
 -- Dependencies: 195
 -- Data for Name: currency; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -695,7 +695,7 @@ INSERT INTO currency (id, name) VALUES (5, 'RUB');
 
 
 --
--- TOC entry 2312 (class 0 OID 0)
+-- TOC entry 2310 (class 0 OID 0)
 -- Dependencies: 194
 -- Name: currency_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -704,44 +704,54 @@ SELECT pg_catalog.setval('currency_id_seq', 5, true);
 
 
 --
--- TOC entry 2269 (class 0 OID 25136)
+-- TOC entry 2267 (class 0 OID 25136)
 -- Dependencies: 189
 -- Data for Name: exchange_rate; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (1, '2016-05-01 00:00:00', 5, 3, 9);
-INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (2, '2016-05-03 00:00:00', 1, 3, 8);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (3, '2016-05-29 00:00:00', 1, 4, 19000);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (6, '2016-05-28 00:00:00', 1, 1, 1);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (7, '2016-05-30 00:00:00', 1, 4, 19200);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (9, '2016-05-31 00:00:00', 1, 4, 19800);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (10, '2016-06-02 00:00:00', 1, 4, 19200);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (12, '2016-06-03 00:00:00', 1, 4, 19800);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (14, '2016-06-03 00:00:00', 4, 1, 5.1e-005);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (15, '2016-06-04 00:00:00', 3, 4, 5000);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (17, '2016-06-04 00:00:00', 4, 3, 0.00019230769230769231);
 
 
 --
--- TOC entry 2313 (class 0 OID 0)
+-- TOC entry 2311 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: exchange_rate_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('exchange_rate_id_seq', 2, true);
+SELECT pg_catalog.setval('exchange_rate_id_seq', 17, true);
 
 
 --
--- TOC entry 2271 (class 0 OID 25146)
+-- TOC entry 2269 (class 0 OID 25146)
 -- Dependencies: 191
 -- Data for Name: operation; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 INSERT INTO operation (id, name, status_block, tax) VALUES (1, 'sell', false, 7);
+INSERT INTO operation (id, name, status_block, tax) VALUES (2, 'buy', false, 9);
+INSERT INTO operation (id, name, status_block, tax) VALUES (3, 'convertation', false, 1);
 
 
 --
--- TOC entry 2314 (class 0 OID 0)
+-- TOC entry 2312 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: operation_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('operation_id_seq', 1, true);
+SELECT pg_catalog.setval('operation_id_seq', 6, true);
 
 
 --
--- TOC entry 2267 (class 0 OID 25128)
+-- TOC entry 2265 (class 0 OID 25128)
 -- Dependencies: 187
 -- Data for Name: transaction; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -749,29 +759,87 @@ SELECT pg_catalog.setval('operation_id_seq', 1, true);
 INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (1, 1, 1, 1, 2, '2016-05-05 00:00:00');
 INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (2, 2, 1, 1, 3, '2016-06-06 00:00:00');
 INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (3, 1, 1, 1, 6, '2016-06-06 00:00:00');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (5, 2, 2, 3, 2323, '2016-05-29 23:58:29.86');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (6, 2, 2, 7, 1111, '2016-05-30 00:14:22.615');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (7, 2, 2, 7, 111111, '2016-05-30 00:25:05.895');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (8, 2, 2, 7, 2, '2016-05-30 20:09:30.306');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (9, 2, 2, 7, 3, '2016-05-30 20:26:38.919');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (10, 2, 2, 7, 5, '2016-05-30 20:31:55.75');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (11, 2, 2, 7, 33, '2016-05-30 20:34:11.118');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (12, 2, 2, 7, 10, '2016-05-30 20:51:10.224');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (13, 2, 2, 7, 30, '2016-05-30 20:56:55.658');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (14, 2, 2, 7, 90, '2016-05-30 20:57:48.274');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (15, 2, 2, 7, 23, '2016-05-30 21:41:07.742');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (16, 2, 2, 7, 3, '2016-05-30 21:41:15.599');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (17, 2, 2, 7, 8, '2016-05-30 21:42:23.786');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (18, 2, 2, 7, 45, '2016-05-30 22:18:23.577');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (19, 2, 2, 7, 3, '2016-05-30 22:20:12.024');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (20, 2, 2, 7, 10, '2016-05-30 22:24:51.577');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (21, 2, 2, 7, 5, '2016-05-30 22:35:29.409');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (22, 2, 2, 7, 1, '2016-05-30 22:39:32.625');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (23, 2, 2, 7, 2, '2016-05-30 22:44:03.028');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (24, 2, 2, 7, 3, '2016-05-30 22:51:31.403');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (25, 2, 2, 9, 34, '2016-05-31 21:22:22.236');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (26, 2, 2, 9, 12, '2016-05-31 21:26:59.57');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (27, 2, 2, 9, 12, '2016-05-31 21:28:58.244');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (28, 2, 2, 9, 1, '2016-05-31 21:36:14.135');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (29, 2, 2, 9, 555, '2016-05-31 21:40:46.725');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (30, 2, 2, 9, 1, '2016-05-31 22:47:09.897');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (31, 2, 2, 10, 12323, '2016-06-01 23:31:29.285');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (32, 2, 2, 10, 300, '2016-06-02 21:32:45.312');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (33, 2, 2, 10, 1, '2016-06-02 21:41:46.809');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (34, 2, 2, 10, 1, '2016-06-02 21:43:17.427');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (35, 2, 2, 10, 1, '2016-06-02 21:44:31.652');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (36, 2, 2, 10, 1, '2016-06-02 21:45:53.883');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (37, 2, 2, 10, 1, '2016-06-02 21:46:21.62');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (38, 2, 2, 10, 1, '2016-06-02 21:47:18.002');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (39, 2, 2, 10, 1, '2016-06-02 21:48:22.579');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (40, 2, 2, 10, 1, '2016-06-02 21:49:12.097');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (41, 2, 2, 10, 1, '2016-06-02 21:49:57.756');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (42, 2, 2, 10, 2, '2016-06-02 22:07:14.748');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (43, 2, 2, 10, 1, '2016-06-02 22:08:23.436');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (44, 2, 2, 10, 3, '2016-06-02 22:09:44.804');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (45, 2, 2, 10, 3, '2016-06-02 22:12:24.795');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (46, 2, 2, 10, 1, '2016-06-02 22:15:21.749');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (47, 2, 2, 10, 2, '2016-06-02 22:19:04.782');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (48, 2, 2, 10, 54, '2016-06-02 22:20:31.696');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (49, 2, 2, 10, 19000, '2016-06-02 22:21:59.041');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (50, 2, 2, 10, 1, '2016-06-02 22:22:58.787');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (51, 2, 2, 10, 1000, '2016-06-02 22:27:11.054');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (52, 2, 2, 10, 3, '2016-06-02 22:38:58.772');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (53, 2, 2, 10, 5, '2016-06-02 22:47:47.448');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (54, 2, 2, 10, 6, '2016-06-02 22:48:19.559');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (55, 2, 2, 12, 3, '2016-06-02 23:10:03.567');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (56, 2, 2, 12, 4, '2016-06-02 23:11:38.968');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (57, 2, 2, 12, 3, '2016-06-02 23:19:58.88');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (58, 2, 2, 12, 1000, '2016-06-02 23:23:13.051');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (59, 2, 1, 14, 20000, '2016-06-03 15:48:51.011');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (60, 2, 2, 12, 123, '2016-06-03 17:47:33.377');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (61, 2, 2, 12, 3, '2016-06-03 21:53:26.783');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (62, 2, 2, 12, 34, '2016-06-03 22:12:50.019');
 
 
 --
--- TOC entry 2315 (class 0 OID 0)
+-- TOC entry 2313 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: transaction_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('transaction_id_seq', 3, true);
+SELECT pg_catalog.setval('transaction_id_seq', 62, true);
 
 
 --
--- TOC entry 2265 (class 0 OID 25115)
+-- TOC entry 2263 (class 0 OID 25115)
 -- Dependencies: 185
 -- Data for Name: user_credentials; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO user_credentials (id, login, password, role) VALUES (1, 'admin', 'pass', 'Administrator');
-INSERT INTO user_credentials (id, login, password, role) VALUES (2, 'client', 'pass', 'Client');
+INSERT INTO user_credentials (id, login, password, role) VALUES (1, 'admin@gmail.com', 'pass', 'Administrator');
+INSERT INTO user_credentials (id, login, password, role) VALUES (2, 'client@gmail.com', 'pass', 'Client');
 
 
 --
--- TOC entry 2316 (class 0 OID 0)
+-- TOC entry 2314 (class 0 OID 0)
 -- Dependencies: 184
 -- Name: user_credentials_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -780,17 +848,17 @@ SELECT pg_catalog.setval('user_credentials_id_seq', 2, true);
 
 
 --
--- TOC entry 2263 (class 0 OID 25102)
+-- TOC entry 2261 (class 0 OID 25102)
 -- Dependencies: 183
 -- Data for Name: user_profile; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO user_profile (id, last_name, first_name, patronymic, number_passport, date_issue, issued, created) VALUES (2, 'vasya', 'rogov', 'tf', '1233', '2014-05-05 00:00:00', 'sd', '2015-04-04 00:00:00');
 INSERT INTO user_profile (id, last_name, first_name, patronymic, number_passport, date_issue, issued, created) VALUES (1, 'oleg', 'vas', 'iv', '123', '2015-04-04 00:00:00', 'asd', '2015-04-04 00:00:00');
+INSERT INTO user_profile (id, last_name, first_name, patronymic, number_passport, date_issue, issued, created) VALUES (2, 'Vasya', 'Rogov', 'Ivanovich', '1233', '2014-05-05 00:00:00', 'sd', '2015-04-04 00:00:00');
 
 
 --
--- TOC entry 2317 (class 0 OID 0)
+-- TOC entry 2315 (class 0 OID 0)
 -- Dependencies: 182
 -- Name: user_profile_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -801,7 +869,7 @@ SELECT pg_catalog.setval('user_profile_id_seq', 1, false);
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2276 (class 0 OID 25230)
+-- TOC entry 2274 (class 0 OID 25230)
 -- Dependencies: 196
 -- Data for Name: balance; Type: TABLE DATA; Schema: test; Owner: -
 --
@@ -810,7 +878,7 @@ INSERT INTO balance (id, sum) VALUES (1, 1000);
 
 
 --
--- TOC entry 2318 (class 0 OID 0)
+-- TOC entry 2316 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: balance_id_seq; Type: SEQUENCE SET; Schema: test; Owner: -
 --
@@ -819,7 +887,7 @@ SELECT pg_catalog.setval('balance_id_seq', 1, false);
 
 
 --
--- TOC entry 2278 (class 0 OID 25235)
+-- TOC entry 2276 (class 0 OID 25235)
 -- Dependencies: 198
 -- Data for Name: currency; Type: TABLE DATA; Schema: test; Owner: -
 --
@@ -828,7 +896,7 @@ INSERT INTO currency (id, name) VALUES (1, 'USD');
 
 
 --
--- TOC entry 2319 (class 0 OID 0)
+-- TOC entry 2317 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: currency_id_seq; Type: SEQUENCE SET; Schema: test; Owner: -
 --
@@ -837,7 +905,7 @@ SELECT pg_catalog.setval('currency_id_seq', 1, true);
 
 
 --
--- TOC entry 2280 (class 0 OID 25243)
+-- TOC entry 2278 (class 0 OID 25243)
 -- Dependencies: 200
 -- Data for Name: exchange_rate; Type: TABLE DATA; Schema: test; Owner: -
 --
@@ -846,7 +914,7 @@ INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, co
 
 
 --
--- TOC entry 2320 (class 0 OID 0)
+-- TOC entry 2318 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: exchange_rate_id_seq; Type: SEQUENCE SET; Schema: test; Owner: -
 --
@@ -855,7 +923,7 @@ SELECT pg_catalog.setval('exchange_rate_id_seq', 1, true);
 
 
 --
--- TOC entry 2282 (class 0 OID 25248)
+-- TOC entry 2280 (class 0 OID 25248)
 -- Dependencies: 202
 -- Data for Name: operation; Type: TABLE DATA; Schema: test; Owner: -
 --
@@ -864,7 +932,7 @@ INSERT INTO operation (id, name, status_block, tax) VALUES (1, 'sell', false, 7)
 
 
 --
--- TOC entry 2321 (class 0 OID 0)
+-- TOC entry 2319 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: operation_id_seq; Type: SEQUENCE SET; Schema: test; Owner: -
 --
@@ -873,7 +941,7 @@ SELECT pg_catalog.setval('operation_id_seq', 1, true);
 
 
 --
--- TOC entry 2284 (class 0 OID 25256)
+-- TOC entry 2282 (class 0 OID 25256)
 -- Dependencies: 204
 -- Data for Name: transaction; Type: TABLE DATA; Schema: test; Owner: -
 --
@@ -884,7 +952,7 @@ INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, da
 
 
 --
--- TOC entry 2322 (class 0 OID 0)
+-- TOC entry 2320 (class 0 OID 0)
 -- Dependencies: 205
 -- Name: transaction_id_seq; Type: SEQUENCE SET; Schema: test; Owner: -
 --
@@ -893,7 +961,7 @@ SELECT pg_catalog.setval('transaction_id_seq', 3, true);
 
 
 --
--- TOC entry 2286 (class 0 OID 25261)
+-- TOC entry 2284 (class 0 OID 25261)
 -- Dependencies: 206
 -- Data for Name: user_credentials; Type: TABLE DATA; Schema: test; Owner: -
 --
@@ -903,7 +971,7 @@ INSERT INTO user_credentials (id, login, password, role) VALUES (2, 'client', 'p
 
 
 --
--- TOC entry 2323 (class 0 OID 0)
+-- TOC entry 2321 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: user_credentials_id_seq; Type: SEQUENCE SET; Schema: test; Owner: -
 --
@@ -912,7 +980,7 @@ SELECT pg_catalog.setval('user_credentials_id_seq', 2, true);
 
 
 --
--- TOC entry 2288 (class 0 OID 25269)
+-- TOC entry 2286 (class 0 OID 25269)
 -- Dependencies: 208
 -- Data for Name: user_profile; Type: TABLE DATA; Schema: test; Owner: -
 --
@@ -922,7 +990,7 @@ INSERT INTO user_profile (id, last_name, first_name, patronymic, number_passport
 
 
 --
--- TOC entry 2324 (class 0 OID 0)
+-- TOC entry 2322 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: user_profile_id_seq; Type: SEQUENCE SET; Schema: test; Owner: -
 --
@@ -933,7 +1001,7 @@ SELECT pg_catalog.setval('user_profile_id_seq', 1, false);
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 2103 (class 2606 OID 25164)
+-- TOC entry 2101 (class 2606 OID 25164)
 -- Name: balance_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -942,7 +1010,7 @@ ALTER TABLE ONLY balance
 
 
 --
--- TOC entry 2105 (class 2606 OID 25177)
+-- TOC entry 2103 (class 2606 OID 25177)
 -- Name: currency_name_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -951,7 +1019,7 @@ ALTER TABLE ONLY currency
 
 
 --
--- TOC entry 2107 (class 2606 OID 25175)
+-- TOC entry 2105 (class 2606 OID 25175)
 -- Name: currency_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -969,16 +1037,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2095 (class 2606 OID 25143)
--- Name: exchange_rate_date_course_key; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY exchange_rate
-    ADD CONSTRAINT exchange_rate_date_course_key UNIQUE (date_course);
-
-
---
--- TOC entry 2097 (class 2606 OID 25141)
+-- TOC entry 2095 (class 2606 OID 25141)
 -- Name: exchange_rate_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -987,7 +1046,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2099 (class 2606 OID 25156)
+-- TOC entry 2097 (class 2606 OID 25156)
 -- Name: operation_name_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -996,7 +1055,7 @@ ALTER TABLE ONLY operation
 
 
 --
--- TOC entry 2101 (class 2606 OID 25154)
+-- TOC entry 2099 (class 2606 OID 25154)
 -- Name: operation_pk; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1052,7 +1111,7 @@ ALTER TABLE ONLY user_profile
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2109 (class 2606 OID 25285)
+-- TOC entry 2107 (class 2606 OID 25285)
 -- Name: balance_pk; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1061,7 +1120,7 @@ ALTER TABLE ONLY balance
 
 
 --
--- TOC entry 2111 (class 2606 OID 25287)
+-- TOC entry 2109 (class 2606 OID 25287)
 -- Name: currency_name_key; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1070,7 +1129,7 @@ ALTER TABLE ONLY currency
 
 
 --
--- TOC entry 2113 (class 2606 OID 25289)
+-- TOC entry 2111 (class 2606 OID 25289)
 -- Name: currency_pk; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1079,7 +1138,7 @@ ALTER TABLE ONLY currency
 
 
 --
--- TOC entry 2115 (class 2606 OID 25291)
+-- TOC entry 2113 (class 2606 OID 25291)
 -- Name: exchange_rate_date_course_currency_from_id_currency_to_id_key; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1088,7 +1147,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2117 (class 2606 OID 25293)
+-- TOC entry 2115 (class 2606 OID 25293)
 -- Name: exchange_rate_date_course_key; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1097,7 +1156,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2119 (class 2606 OID 25295)
+-- TOC entry 2117 (class 2606 OID 25295)
 -- Name: exchange_rate_pk; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1106,7 +1165,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2121 (class 2606 OID 25297)
+-- TOC entry 2119 (class 2606 OID 25297)
 -- Name: operation_name_key; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1115,7 +1174,7 @@ ALTER TABLE ONLY operation
 
 
 --
--- TOC entry 2123 (class 2606 OID 25299)
+-- TOC entry 2121 (class 2606 OID 25299)
 -- Name: operation_pk; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1124,7 +1183,7 @@ ALTER TABLE ONLY operation
 
 
 --
--- TOC entry 2125 (class 2606 OID 25301)
+-- TOC entry 2123 (class 2606 OID 25301)
 -- Name: transaction_pk; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1133,7 +1192,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2127 (class 2606 OID 25303)
+-- TOC entry 2125 (class 2606 OID 25303)
 -- Name: user_credentials_login_key; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1142,7 +1201,7 @@ ALTER TABLE ONLY user_credentials
 
 
 --
--- TOC entry 2129 (class 2606 OID 25305)
+-- TOC entry 2127 (class 2606 OID 25305)
 -- Name: user_credentials_pk; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1151,7 +1210,7 @@ ALTER TABLE ONLY user_credentials
 
 
 --
--- TOC entry 2131 (class 2606 OID 25307)
+-- TOC entry 2129 (class 2606 OID 25307)
 -- Name: user_profile_number_passport_key; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1160,7 +1219,7 @@ ALTER TABLE ONLY user_profile
 
 
 --
--- TOC entry 2133 (class 2606 OID 25309)
+-- TOC entry 2131 (class 2606 OID 25309)
 -- Name: user_profile_pk; Type: CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1171,7 +1230,7 @@ ALTER TABLE ONLY user_profile
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 2140 (class 2606 OID 25208)
+-- TOC entry 2138 (class 2606 OID 25208)
 -- Name: balance_fk0; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1180,7 +1239,7 @@ ALTER TABLE ONLY balance
 
 
 --
--- TOC entry 2138 (class 2606 OID 25198)
+-- TOC entry 2136 (class 2606 OID 25198)
 -- Name: exchange_rate_fk0; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1189,7 +1248,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2139 (class 2606 OID 25203)
+-- TOC entry 2137 (class 2606 OID 25203)
 -- Name: exchange_rate_fk1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1198,7 +1257,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2135 (class 2606 OID 25183)
+-- TOC entry 2133 (class 2606 OID 25183)
 -- Name: transaction_fk0; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1207,7 +1266,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2136 (class 2606 OID 25188)
+-- TOC entry 2134 (class 2606 OID 25188)
 -- Name: transaction_fk1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1216,7 +1275,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2137 (class 2606 OID 25193)
+-- TOC entry 2135 (class 2606 OID 25193)
 -- Name: transaction_fk2; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1225,7 +1284,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2134 (class 2606 OID 25178)
+-- TOC entry 2132 (class 2606 OID 25178)
 -- Name: user_profile_fk0; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1236,7 +1295,7 @@ ALTER TABLE ONLY user_profile
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2141 (class 2606 OID 25310)
+-- TOC entry 2139 (class 2606 OID 25310)
 -- Name: balance_fk0; Type: FK CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1245,7 +1304,7 @@ ALTER TABLE ONLY balance
 
 
 --
--- TOC entry 2142 (class 2606 OID 25315)
+-- TOC entry 2140 (class 2606 OID 25315)
 -- Name: exchange_rate_fk0; Type: FK CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1254,7 +1313,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2143 (class 2606 OID 25320)
+-- TOC entry 2141 (class 2606 OID 25320)
 -- Name: exchange_rate_fk1; Type: FK CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1263,7 +1322,7 @@ ALTER TABLE ONLY exchange_rate
 
 
 --
--- TOC entry 2144 (class 2606 OID 25325)
+-- TOC entry 2142 (class 2606 OID 25325)
 -- Name: transaction_fk0; Type: FK CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1272,7 +1331,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2145 (class 2606 OID 25330)
+-- TOC entry 2143 (class 2606 OID 25330)
 -- Name: transaction_fk1; Type: FK CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1281,7 +1340,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2146 (class 2606 OID 25335)
+-- TOC entry 2144 (class 2606 OID 25335)
 -- Name: transaction_fk2; Type: FK CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1290,7 +1349,7 @@ ALTER TABLE ONLY transaction
 
 
 --
--- TOC entry 2147 (class 2606 OID 25340)
+-- TOC entry 2145 (class 2606 OID 25340)
 -- Name: user_profile_fk0; Type: FK CONSTRAINT; Schema: test; Owner: -
 --
 
@@ -1298,7 +1357,7 @@ ALTER TABLE ONLY user_profile
     ADD CONSTRAINT user_profile_fk0 FOREIGN KEY (id) REFERENCES user_credentials(id);
 
 
--- Completed on 2016-05-26 23:50:19
+-- Completed on 2016-06-04 00:35:28
 
 --
 -- PostgreSQL database dump complete

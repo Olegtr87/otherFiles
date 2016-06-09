@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.2
 -- Dumped by pg_dump version 9.5.2
 
--- Started on 2016-06-04 00:35:26
+-- Started on 2016-06-10 01:45:55
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -192,7 +192,8 @@ CREATE TABLE transaction (
     operation_id integer NOT NULL,
     exchange_rate_id integer NOT NULL,
     sum_in integer NOT NULL,
-    date_operation timestamp without time zone NOT NULL
+    date_operation timestamp without time zone NOT NULL,
+    total_sum integer
 );
 
 
@@ -711,14 +712,18 @@ SELECT pg_catalog.setval('currency_id_seq', 5, true);
 
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (1, '2016-05-01 00:00:00', 5, 3, 9);
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (3, '2016-05-29 00:00:00', 1, 4, 19000);
-INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (6, '2016-05-28 00:00:00', 1, 1, 1);
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (7, '2016-05-30 00:00:00', 1, 4, 19200);
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (9, '2016-05-31 00:00:00', 1, 4, 19800);
-INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (10, '2016-06-02 00:00:00', 1, 4, 19200);
-INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (12, '2016-06-03 00:00:00', 1, 4, 19800);
-INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (14, '2016-06-03 00:00:00', 4, 1, 5.1e-005);
-INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (15, '2016-06-04 00:00:00', 3, 4, 5000);
-INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (17, '2016-06-04 00:00:00', 4, 3, 0.00019230769230769231);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (21, '2016-06-07 00:00:00', 1, 4, 19200);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (22, '2016-06-08 00:00:00', 1, 4, 19800);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (23, '2016-06-08 00:00:00', 4, 1, 5.0251256281407036e-005);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (24, '2016-06-08 00:00:00', 4, 2, 4.9504950495049508e-005);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (25, '2016-06-08 00:00:00', 2, 4, 20000);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (26, '2016-06-09 00:00:00', 1, 4, 19350);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (27, '2016-06-09 00:00:00', 4, 1, 5.1020408163265308e-005);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (28, '2016-06-09 00:00:00', 2, 4, 22000);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (30, '2016-06-09 00:00:00', 4, 2, 4.5248868778280542e-005);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (20, '2016-06-04 00:00:00', 4, 3, 0.00020000000000000001);
 
 
 --
@@ -727,7 +732,7 @@ INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, co
 -- Name: exchange_rate_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('exchange_rate_id_seq', 17, true);
+SELECT pg_catalog.setval('exchange_rate_id_seq', 32, true);
 
 
 --
@@ -737,8 +742,8 @@ SELECT pg_catalog.setval('exchange_rate_id_seq', 17, true);
 --
 
 INSERT INTO operation (id, name, status_block, tax) VALUES (1, 'sell', false, 7);
+INSERT INTO operation (id, name, status_block, tax) VALUES (3, 'convertation', false, 2);
 INSERT INTO operation (id, name, status_block, tax) VALUES (2, 'buy', false, 9);
-INSERT INTO operation (id, name, status_block, tax) VALUES (3, 'convertation', false, 1);
 
 
 --
@@ -756,67 +761,19 @@ SELECT pg_catalog.setval('operation_id_seq', 6, true);
 -- Data for Name: transaction; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (1, 1, 1, 1, 2, '2016-05-05 00:00:00');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (2, 2, 1, 1, 3, '2016-06-06 00:00:00');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (3, 1, 1, 1, 6, '2016-06-06 00:00:00');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (5, 2, 2, 3, 2323, '2016-05-29 23:58:29.86');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (6, 2, 2, 7, 1111, '2016-05-30 00:14:22.615');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (7, 2, 2, 7, 111111, '2016-05-30 00:25:05.895');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (8, 2, 2, 7, 2, '2016-05-30 20:09:30.306');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (9, 2, 2, 7, 3, '2016-05-30 20:26:38.919');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (10, 2, 2, 7, 5, '2016-05-30 20:31:55.75');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (11, 2, 2, 7, 33, '2016-05-30 20:34:11.118');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (12, 2, 2, 7, 10, '2016-05-30 20:51:10.224');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (13, 2, 2, 7, 30, '2016-05-30 20:56:55.658');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (14, 2, 2, 7, 90, '2016-05-30 20:57:48.274');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (15, 2, 2, 7, 23, '2016-05-30 21:41:07.742');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (16, 2, 2, 7, 3, '2016-05-30 21:41:15.599');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (17, 2, 2, 7, 8, '2016-05-30 21:42:23.786');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (18, 2, 2, 7, 45, '2016-05-30 22:18:23.577');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (19, 2, 2, 7, 3, '2016-05-30 22:20:12.024');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (20, 2, 2, 7, 10, '2016-05-30 22:24:51.577');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (21, 2, 2, 7, 5, '2016-05-30 22:35:29.409');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (22, 2, 2, 7, 1, '2016-05-30 22:39:32.625');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (23, 2, 2, 7, 2, '2016-05-30 22:44:03.028');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (24, 2, 2, 7, 3, '2016-05-30 22:51:31.403');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (25, 2, 2, 9, 34, '2016-05-31 21:22:22.236');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (26, 2, 2, 9, 12, '2016-05-31 21:26:59.57');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (27, 2, 2, 9, 12, '2016-05-31 21:28:58.244');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (28, 2, 2, 9, 1, '2016-05-31 21:36:14.135');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (29, 2, 2, 9, 555, '2016-05-31 21:40:46.725');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (30, 2, 2, 9, 1, '2016-05-31 22:47:09.897');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (31, 2, 2, 10, 12323, '2016-06-01 23:31:29.285');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (32, 2, 2, 10, 300, '2016-06-02 21:32:45.312');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (33, 2, 2, 10, 1, '2016-06-02 21:41:46.809');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (34, 2, 2, 10, 1, '2016-06-02 21:43:17.427');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (35, 2, 2, 10, 1, '2016-06-02 21:44:31.652');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (36, 2, 2, 10, 1, '2016-06-02 21:45:53.883');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (37, 2, 2, 10, 1, '2016-06-02 21:46:21.62');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (38, 2, 2, 10, 1, '2016-06-02 21:47:18.002');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (39, 2, 2, 10, 1, '2016-06-02 21:48:22.579');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (40, 2, 2, 10, 1, '2016-06-02 21:49:12.097');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (41, 2, 2, 10, 1, '2016-06-02 21:49:57.756');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (42, 2, 2, 10, 2, '2016-06-02 22:07:14.748');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (43, 2, 2, 10, 1, '2016-06-02 22:08:23.436');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (44, 2, 2, 10, 3, '2016-06-02 22:09:44.804');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (45, 2, 2, 10, 3, '2016-06-02 22:12:24.795');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (46, 2, 2, 10, 1, '2016-06-02 22:15:21.749');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (47, 2, 2, 10, 2, '2016-06-02 22:19:04.782');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (48, 2, 2, 10, 54, '2016-06-02 22:20:31.696');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (49, 2, 2, 10, 19000, '2016-06-02 22:21:59.041');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (50, 2, 2, 10, 1, '2016-06-02 22:22:58.787');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (51, 2, 2, 10, 1000, '2016-06-02 22:27:11.054');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (52, 2, 2, 10, 3, '2016-06-02 22:38:58.772');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (53, 2, 2, 10, 5, '2016-06-02 22:47:47.448');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (54, 2, 2, 10, 6, '2016-06-02 22:48:19.559');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (55, 2, 2, 12, 3, '2016-06-02 23:10:03.567');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (56, 2, 2, 12, 4, '2016-06-02 23:11:38.968');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (57, 2, 2, 12, 3, '2016-06-02 23:19:58.88');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (58, 2, 2, 12, 1000, '2016-06-02 23:23:13.051');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (59, 2, 1, 14, 20000, '2016-06-03 15:48:51.011');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (60, 2, 2, 12, 123, '2016-06-03 17:47:33.377');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (61, 2, 2, 12, 3, '2016-06-03 21:53:26.783');
-INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation) VALUES (62, 2, 2, 12, 34, '2016-06-03 22:12:50.019');
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (92, 2, 2, 22, 100, '2016-06-08 03:11:37.029', 1801800);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (93, 2, 2, 22, 1000, '2016-06-08 03:11:59.362', 19602000);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (94, 2, 1, 24, 19602000, '2016-06-08 03:11:59.434', 961);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (95, 2, 2, 22, 100, '2016-06-08 03:14:44.956', 1940400);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (96, 2, 1, 24, 1940400, '2016-06-08 03:14:45.024', 94);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (97, 2, 2, 22, 100, '2016-06-08 03:22:13.124', 1940400);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (98, 2, 1, 24, 1940400, '2016-06-08 03:22:13.197', 94);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (99, 2, 2, 22, 100, '2016-06-08 03:24:02.916', 1801800);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (100, 2, 1, 23, 100000, '2016-06-08 03:24:26.946', 5);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (101, 2, 2, 26, 100, '2016-06-09 00:32:58.012', 1760850);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (102, 2, 2, 26, 100, '2016-06-09 00:39:28.834', 1896300);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (103, 2, 1, 30, 1896300, '2016-06-09 00:39:28.861', 84);
+INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, date_operation, total_sum) VALUES (104, 2, 2, 26, 100, '2016-06-09 00:50:01.352', 1760850);
 
 
 --
@@ -825,7 +782,7 @@ INSERT INTO transaction (id, user_id, operation_id, exchange_rate_id, sum_in, da
 -- Name: transaction_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('transaction_id_seq', 62, true);
+SELECT pg_catalog.setval('transaction_id_seq', 104, true);
 
 
 --
@@ -836,6 +793,7 @@ SELECT pg_catalog.setval('transaction_id_seq', 62, true);
 
 INSERT INTO user_credentials (id, login, password, role) VALUES (1, 'admin@gmail.com', 'pass', 'Administrator');
 INSERT INTO user_credentials (id, login, password, role) VALUES (2, 'client@gmail.com', 'pass', 'Client');
+INSERT INTO user_credentials (id, login, password, role) VALUES (3, 'olegtr87@gmail.com', 'pass', 'Client');
 
 
 --
@@ -844,7 +802,7 @@ INSERT INTO user_credentials (id, login, password, role) VALUES (2, 'client@gmai
 -- Name: user_credentials_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('user_credentials_id_seq', 2, true);
+SELECT pg_catalog.setval('user_credentials_id_seq', 5, true);
 
 
 --
@@ -855,6 +813,7 @@ SELECT pg_catalog.setval('user_credentials_id_seq', 2, true);
 
 INSERT INTO user_profile (id, last_name, first_name, patronymic, number_passport, date_issue, issued, created) VALUES (1, 'oleg', 'vas', 'iv', '123', '2015-04-04 00:00:00', 'asd', '2015-04-04 00:00:00');
 INSERT INTO user_profile (id, last_name, first_name, patronymic, number_passport, date_issue, issued, created) VALUES (2, 'Vasya', 'Rogov', 'Ivanovich', '1233', '2014-05-05 00:00:00', 'sd', '2015-04-04 00:00:00');
+INSERT INTO user_profile (id, last_name, first_name, patronymic, number_passport, date_issue, issued, created) VALUES (3, 'Vasilevskii', 'Oleg', 'Ivanovich', 'KH124123123', '2016-06-06 00:00:00', 'Grodno', '2016-06-06 23:33:50.557');
 
 
 --
@@ -1357,7 +1316,7 @@ ALTER TABLE ONLY user_profile
     ADD CONSTRAINT user_profile_fk0 FOREIGN KEY (id) REFERENCES user_credentials(id);
 
 
--- Completed on 2016-06-04 00:35:28
+-- Completed on 2016-06-10 01:45:57
 
 --
 -- PostgreSQL database dump complete

@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.2
 -- Dumped by pg_dump version 9.5.2
 
--- Started on 2016-06-10 01:45:55
+-- Started on 2016-06-12 05:00:15
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -666,11 +666,11 @@ SET search_path = public, pg_catalog;
 -- Data for Name: balance; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO balance (id, sum) VALUES (1, 1000);
 INSERT INTO balance (id, sum) VALUES (2, 2000);
 INSERT INTO balance (id, sum) VALUES (3, 5000);
 INSERT INTO balance (id, sum) VALUES (4, 6000);
 INSERT INTO balance (id, sum) VALUES (5, 7000);
+INSERT INTO balance (id, sum) VALUES (1, 2500);
 
 
 --
@@ -718,12 +718,12 @@ INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, co
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (22, '2016-06-08 00:00:00', 1, 4, 19800);
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (23, '2016-06-08 00:00:00', 4, 1, 5.0251256281407036e-005);
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (24, '2016-06-08 00:00:00', 4, 2, 4.9504950495049508e-005);
-INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (25, '2016-06-08 00:00:00', 2, 4, 20000);
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (26, '2016-06-09 00:00:00', 1, 4, 19350);
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (27, '2016-06-09 00:00:00', 4, 1, 5.1020408163265308e-005);
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (28, '2016-06-09 00:00:00', 2, 4, 22000);
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (30, '2016-06-09 00:00:00', 4, 2, 4.5248868778280542e-005);
 INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (20, '2016-06-04 00:00:00', 4, 3, 0.00020000000000000001);
+INSERT INTO exchange_rate (id, date_course, currency_from_id, currency_to_id, conversion) VALUES (25, '2016-06-08 00:00:00', 2, 4, 20200);
 
 
 --
@@ -1316,7 +1316,7 @@ ALTER TABLE ONLY user_profile
     ADD CONSTRAINT user_profile_fk0 FOREIGN KEY (id) REFERENCES user_credentials(id);
 
 
--- Completed on 2016-06-10 01:45:57
+-- Completed on 2016-06-12 05:00:18
 
 --
 -- PostgreSQL database dump complete
